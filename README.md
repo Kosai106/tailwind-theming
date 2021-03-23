@@ -1,23 +1,23 @@
-# Next.js + Tailwind CSS Example
+# [Easy Theming with TailwindCSS](https://youtu.be/GjYHK0TjN8c)
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) (v2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This example shows how to utilize [TailwindCSS](https://tailwindcss.com/) (v2) together with [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) in order to implement a very dynamic theming solution for your websites and applications.
 
-It uses the new [`@tailwindcss/jit`](https://github.com/tailwindlabs/tailwindcss-jit) engine for Tailwind CSS.
+I am using the new [`@tailwindcss/jit`](https://github.com/tailwindlabs/tailwindcss-jit) engine for TailwindCSS, although this is not a requirement to follow along.
 
-## Deploy your own
+Here's the list of files touched in order to achieve the result shown in the video:
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+```
+root
+├── hooks/
+│   └── useTheme.js
+├── pages/
+│   ├── _app.js
+│   └── index.js
+├── styles/
+│   └── globals.css
+└── tailwind.config.js
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Thanks for watching.
+
+[Kevin Østerkilde](https://oesterkilde.dk?ref=github)
