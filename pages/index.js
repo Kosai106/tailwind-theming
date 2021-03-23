@@ -1,6 +1,15 @@
-import Head from 'next/head'
+import Head from "next/head";
+
+import { useThemeContext } from "../hooks/useTheme";
 
 export default function Home() {
+  const { setTheme } = useThemeContext();
+
+  const onHandleThemeChange = (evt) => {
+    evt.preventDefault();
+    setTheme(evt.target.value);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -10,23 +19,30 @@ export default function Home() {
 
       <main className="flex flex-col items-center justify-center flex-1 px-20 text-center">
         <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
+          Welcome to{" "}
+          <a className="text-accent" href="https://nextjs.org">
             Next.js!
           </a>
         </h1>
 
         <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
+          Get started by editing{" "}
+          <code className="p-3 font-mono text-lg bg-foreground rounded-md">pages/index.js</code>
         </p>
+
+        <select
+          onChange={onHandleThemeChange}
+          className="mt-12 text-content bg-foreground border border-edge p-4 w-72 rounded-lg"
+        >
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="custom">Custom</option>
+        </select>
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           <a
             href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            className="p-6 mt-6 text-left bg-foreground border border-edge w-96 rounded-xl hover:text-accent focus:text-accent"
           >
             <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -36,7 +52,7 @@ export default function Home() {
 
           <a
             href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            className="p-6 mt-6 text-left bg-foreground border border-edge w-96 rounded-xl hover:text-accent focus:text-accent"
           >
             <h3 className="text-2xl font-bold">Learn &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -46,7 +62,7 @@ export default function Home() {
 
           <a
             href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            className="p-6 mt-6 text-left bg-foreground border border-edge w-96 rounded-xl hover:text-accent focus:text-accent"
           >
             <h3 className="text-2xl font-bold">Examples &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -56,7 +72,7 @@ export default function Home() {
 
           <a
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            className="p-6 mt-6 text-left bg-foreground border border-edge w-96 rounded-xl hover:text-accent focus:text-accent"
           >
             <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -73,10 +89,9 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
+          Powered by <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
         </a>
       </footer>
     </div>
-  )
+  );
 }
