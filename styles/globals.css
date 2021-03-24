@@ -1,9 +1,20 @@
-:root {
-  --accent: 37 99 235;
-  --content: 0 0 0;
-  --background: 255 255 255;
-  --foreground: 230 230 230;
-  --edge: 200 200 200;
+body {
+  @apply bg-background;
+  @apply text-content;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent: 37 99 235;
+    --content: 0 0 0;
+    --background: 255 255 255;
+    --foreground: 230 230 230;
+    --edge: 200 200 200;
+  }
 }
 
 .theme-dark {
@@ -21,12 +32,3 @@
   --foreground: 137 141 84;
   --edge: 254 0 138;
 }
-
-body {
-  @apply bg-background;
-  @apply text-content;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

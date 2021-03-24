@@ -8,6 +8,8 @@ Here's the list of files touched in order to achieve the result shown in the vid
 
 ```
 root
+├── components/
+│   └── ThemeSwitcher.js
 ├── hooks/
 │   └── useTheme.js
 ├── pages/
