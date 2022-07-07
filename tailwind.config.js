@@ -1,19 +1,16 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        accent: ({ opacityVariable }) => `rgba(var(--accent) / var(${opacityVariable}))`,
-        content: ({ opacityVariable }) => `rgba(var(--content) / var(${opacityVariable}))`,
-        foreground: ({ opacityVariable }) => `rgba(var(--foreground) / var(${opacityVariable}))`,
-        background: ({ opacityVariable }) => `rgba(var(--background) / var(${opacityVariable}))`,
-        edge: ({ opacityVariable }) => `rgba(var(--edge) / var(${opacityVariable}))`,
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        content: "rgb(var(--content) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        background: "rgb(var(--background) / <alpha-value>)",
+        edge: "rgb(var(--edge) / <alpha-value>)",
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
